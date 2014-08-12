@@ -1,0 +1,35 @@
+  var app = angular.module('app', []);
+
+  app.controller('mainCtrl', function ($scope, $http) {
+
+    $scope.appName = 'Bootstrap Library'
+
+    $scope.bootstrap_version_filter = function(row){
+
+      return function(row){
+
+        // if it is 2, check if 2 is allowed
+        if( row.bootstrap_version == 2 )
+        {
+          return $scope.bootstrap_2;
+        }
+
+        if( row.bootstrap_version == 3 )
+        {
+          return $scope.bootstrap_3;
+        }
+      }
+
+    };
+
+	$scope.filterTemplateName = function( templateName ){
+		return templateName.replace( '&#8211;', '-' );
+	}
+
+	// get json file
+	$http({method: 'GET', url: 'data/data.json'}).success(function(data, status, headers, config) {
+		$scope.data = data;
+	});
+
+
+  });

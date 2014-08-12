@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Bootstrap Template Library</title>
+		<link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/amelia/bootstrap.min.css" rel="stylesheet">
+		<link href="css.css" rel="stylesheet">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+		<script src="app.js"></script>
+
+	</head>
+	<body ng-controller="mainCtrl">
+
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">
+				  <i class=""></i>
+				  {{appName}}
+			  </a>
+			</div>
+			<div class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav">
+			  </ul>
+			</div><!--/.nav-collapse -->
+		  </div>
+		</div>
+
+		<!-- Begin page content -->
+		<div class="container-fluid">
+
+		<div class="jumbotron" align="center">
+
+		  <h1>
+			<i class="glyphicon glyphicon-list-alt"></i>
+			  <br>
+			{{appName}}
+		  </h1>
+
+		  <p> A list of free Bootstrap templates from across the web. </p>
+		  <p><a class="btn btn-primary btn-lg">Community Maintained</a></p>
+		</div>
+
+			<div class="table-responsive">
+
+			  <table class="table table-hover table-bordered table-striped">
+				<thead align="center">
+				  <tr class="info">
+					<th colspan="2">
+
+
+						<input type="text" id="search" ng-model="search" 
+							   class="form-control pull-right" style="width:25%;" 
+							   placeholder="Search Templates">
+
+						<span class="lead pull-right"> 
+						  {{ ( data | filter: search ).length }} 
+						  {{ (search.length > 0) ? 'Matches':'Templates' }}
+							&nbsp;&nbsp;&nbsp;&nbsp;
+						</span>
+					</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr ng-repeat="template in data | filter: search">
+
+					  <td>
+						  <img ng-src="{{template.image}}" 
+							   class="template-image img"
+							   style="max-width:{{ (enlarged_image) ? '100%': '300px'; }};">
+
+						  <a class="text-sm" align="center" 
+							 ng-click="enlarged_image = !enlarged_image" 
+							 ng-init="enlarged_image = false">
+
+							  <i class="glyphicon glyphicon-zoom-{{ (enlarged_image) ? 'out': 'in'; }}"></i>
+							  {{ (enlarged_image) ? 'Minimize': 'Enlarge'; }} Image
+						  </a>
+					  </td>
+
+					  <td align="center"> 
+						  <a class="lead text-success" href="{{template.link}}" target="_blank"> 
+							  {{filterTemplateName( template.name )}}
+						  </a>
+
+						  <br><br>
+
+						  <a ng-init="show_description = false" 
+							 ng-click="show_description=!show_description"
+							 class="btn btn-warning btn-xs {{ (show_description) ? 'active' : ''; }}">
+
+							  <i class="glyphicon glyphicon-{{ (show_description) ? 'chevron-up':'chevron-down'; }}"></i>
+
+							  Show Description
+
+						  </a>
+
+						  <span class="">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+
+						  <a class="btn btn-info btn-xs" ng-href="{{template.demo_link}}" target="_blank">
+							  <i class="glyphicon glyphicon-share"></i>&nbsp;&nbsp;
+							  Demo
+							  &nbsp;&nbsp;
+						  </a>
+
+						  <span class="">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+
+						  <a class="btn btn-primary btn-xs" ng-href="{{template.download_link}}" target="_blank">
+							  <i class="glyphicon glyphicon-download-alt"></i>&nbsp;&nbsp;
+							  Download
+							  &nbsp;&nbsp;
+						  </a>
+
+						  <span class="">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+
+						  <a href="{{template.source_link}}?source=BootstrapTemplateLibrary" 
+							 class="btn btn-success btn-xs" target="_blank">
+						  	<i class="glyphicon glyphicon-link"></i>&nbsp;&nbsp;
+							  {{template.source}}
+							  &nbsp;&nbsp;
+						  </a>
+
+						  <br><br>
+						  <div ng-show="show_description" class="template-description well">
+						  {{template.description}} 
+
+						  </div>
+					  </td>
+
+				  </tr>
+				</tbody>
+			  </table>
+
+			</div>
+
+		</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{modal_title}}</h4>
+      </div>
+      <div class="modal-body">
+        <img ng-src="{{modal_image}}">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	</body>
+</html>
