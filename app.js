@@ -2,7 +2,7 @@
 
   app.controller('mainCtrl', function ($scope, $http) {
 
-    $scope.appName = 'Bootstrap Library'
+    $scope.appName = 'Yo Bootstrap'
 
     $scope.bootstrap_version_filter = function(row){
 
@@ -23,7 +23,13 @@
     };
 
 	$scope.filterTemplateName = function( templateName ){
-		return templateName.replace( '&#8211;', '-' );
+		
+		templateName = templateName.replace( '&#8211;', '-' );
+
+		templateName = templateName.replace( '&#038;', '&' );
+
+		return templateName;
+
 	}
 
 	// get json file

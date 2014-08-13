@@ -12,11 +12,11 @@ class Scraper {
 	{
 		$start_time = time();
 
-		$this->blacktie();
 		$this->manualFinds();
-		$this->prepBootstrap();
-		$this->bootswatch();
+		$this->blacktie();
 		$this->startBootstrap();
+		$this->bootswatch();
+		$this->prepBootstrap();
 
 		$this->save();
 
@@ -38,7 +38,6 @@ class Scraper {
 		}
 		else{
 			echo "Uh oh. Data wasn't written to file. \n\n\n";
-			echo json_encode( $this->templates );
 		}
 
 
@@ -206,8 +205,14 @@ class Scraper {
 				$template['image'] = $template_page->find( 'img.wp-post-image' )[0]->src;
 
 				$template['name'] = $template_page->find( 'h1.entry-title' )[0]->plaintext;
+				
+				if ( $template['name'] == 'Thank you all' )
+				{
+					unset( $template_page, $template );
+					continue;
+				}
 
-				$template['link'] = $page->find( 'h1.entry-title a' )[0]->href;
+				$template['link'] = $element->find( 'h1.entry-title a' )[0]->href;
 
 				$template['description'] = [];
 
@@ -236,17 +241,17 @@ class Scraper {
 				$this->templates[]= $template;
 
 				unset( $template_page, $template );
-				
+
 				echo ".";
 			}
 		}
 	}
-	
+
 	public function manualFinds()
 	{
 		$templates[] = [
 			'source' => 'Elliot Hesp',
-			'source_link' => '',
+			'source_link' => 'https://github.com/Ehesp/',
 			'image' => 'http://i.imgur.com/MRzDg7x.jpg',
 			'name' => 'AngularJS + Bootstrap Responsive Dashboard',
 			'link' => 'https://github.com/Ehesp/Responsive-Dashboard',

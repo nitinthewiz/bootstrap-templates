@@ -15,7 +15,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Bootstrap Template Library</title>
+		<title>Yo Bootstrap</title>
 		<link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/amelia/bootstrap.min.css" rel="stylesheet">
 		<link href="css.css" rel="stylesheet">
 
@@ -29,18 +29,21 @@
 		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		  <div class="container">
 			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
+
 			  <a class="navbar-brand" href="http://yobootstrap.com/">
 				  <i class="glyphicon glyphicon-list-alt"></i>
 				  {{appName}}
 			  </a>
+
 			</div>
+
 			<div class="navbar-collapse collapse">
+				<div class="pull-right">
+					<a class="navbar-brand" target="_blank" href="https://github.com/afaqurk/">
+						Site Author
+					</a>
+				</div>
+
 			  <ul class="nav navbar-nav">
 			  </ul>
 			</div><!--/.nav-collapse -->
@@ -59,6 +62,14 @@
 		  </h1>
 
 		  <p> A list of free Bootstrap templates from across the web. </p>
+
+		  <p style="font-size:12px;" class="text-info text-sm">
+			  Yo Bootstrap is not the author of any of the templates listed.
+			  <br>
+			  We have nothing but love for the devs &amp; designers who have created these templates. 
+			  <br>
+			  Please follow linked sites for each template to the authors' site.
+		  </p>
 		</div>
 
 			<div class="table-responsive">
@@ -133,7 +144,7 @@
 
 						  <span class="">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
 
-						  <a href="{{template.source_link}}?source=BootstrapTemplateLibrary" 
+						  <a href="{{template.source_link}}?source=YoBootstrap.com" 
 							 class="btn btn-success btn-xs" target="_blank">
 						  	<i class="glyphicon glyphicon-link"></i>&nbsp;&nbsp;
 							  {{template.source}}
