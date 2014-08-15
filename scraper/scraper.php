@@ -205,7 +205,7 @@ class Scraper {
 				$template['image'] = $template_page->find( 'img.wp-post-image' )[0]->src;
 
 				$template['name'] = $template_page->find( 'h1.entry-title' )[0]->plaintext;
-				
+
 				if ( $template['name'] == 'Thank you all' )
 				{
 					unset( $template_page, $template );
@@ -218,18 +218,19 @@ class Scraper {
 
 				foreach(  $template_page->find( 'div.entry-content p' ) as $p )
 				{
-					if( strpos($p->plaintext, 'Live Demo') )
+					if( strpos($p->plaintext, 'Live Demo') !== FALSE )
 					{
 						$template['demo_link'] = $p->find( 'a' )[0]->href;
 					}
-					elseif( in_array( $p->plaintext, [ 'Download', 'Download Now', ] ) )
+					elseif( strpos( $p->plaintext, 'Download') !== FALSE
+						   	|| strpos( $p->plaintext, 'Download Now' ) !== FALSE
+						  )
 					{
 						$template['download_link'] = $p->find( 'a' )[0]->href;
 					}
 					elseif ( stristr( $p->plaintext, 'Framework Used') )
 					{
 						preg_match_all('!\d+!', $p->plaintext, $bootstrap_version );
-
 						$template['bootstrap_version'] = $bootstrap_version[0][0];
 					}
 					else
