@@ -23,7 +23,7 @@
     };
 
 	$scope.filterTemplateName = function( templateName ){
-		
+
 		templateName = templateName.replace( '&#8211;', '-' );
 
 		templateName = templateName.replace( '&#038;', '&' );
@@ -34,7 +34,9 @@
 
 	// get json file
 	$http({method: 'GET', url: 'data/data.json'}).success(function(data, status, headers, config) {
+
 		$scope.data = data;
+
 	});
 
 

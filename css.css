@@ -56,8 +56,14 @@
 		  -o-transition: all 1s ease;
 		  transition: all 1s ease;
 	}
+	
+	.img-container {
+		height: 200px;
+		overflow: hidden;
+	}
+
 	.template-image{
-		max-width: 400px;
+		width: 400px;
 	}
 	.template-description{
 		width: 400px;

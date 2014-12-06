@@ -79,7 +79,7 @@ class Scraper {
 			}
 			else
 			{
-				$template['demo_link'] = $base_url . 
+				$template['demo_link'] = $base_url .
 					$template_page->find( $template_attribute_class['demo'] )[0]->href;
 			}
 
@@ -263,6 +263,19 @@ class Scraper {
 
 		];
 		
+		 $templates[] = [
+                        'source' => 'Manish',
+                        'source_link' => 'http://www.reviewzap.com/blog/',
+                        'image' => 'http://www.reviewzap.com/blog/wp-content/uploads/2014/11/CityLanding.png',
+                        'name' => 'City Landing Page Template',
+                        'link' => 'http://www.reviewzap.com/blog/city-landing-template.html',
+                        'demo_link' => 'http://demo.reviewzap.com/citylanding/',
+                        'download_link' => 'http://www.reviewzap.com/blog/?ddownload=2171',
+                        'description' => 'The template is ideal for app websites, startups or anyone looking elegant one page landing page. Here are some of the features of this template.',
+                        'bootstrap_version' => 3
+
+                ];
+
 		foreach( $templates as $template )
 		{
 			$this->templates[]= $template;

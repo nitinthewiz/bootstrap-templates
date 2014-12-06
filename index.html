@@ -16,7 +16,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<title>Yo Bootstrap</title>
-		<link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/amelia/bootstrap.min.css" rel="stylesheet">
+		<link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css" rel="stylesheet">
 		<link href="css.css" rel="stylesheet">
 
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
@@ -100,9 +100,11 @@
 				  <tr ng-repeat="template in data | filter: search">
 
 					  <td>
+						<div class="img-container">
 						  <img ng-src="{{template.image}}" 
 							   class="template-image img"
 							   style="max-width:{{ (enlarged_image) ? '100%': '300px'; }};">
+						</div>
 
 						  <a class="text-sm" align="center" 
 							 ng-click="enlarged_image = !enlarged_image" 
