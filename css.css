@@ -1,75 +1,127 @@
-/* Sticky footer styles
--------------------------------------------------- */
-	html {
-	  position: relative;
-	  min-height: 100%;
-	}
-	body {
-	  margin-top: 80px;
-	  /* Margin bottom by footer height */
-	  margin-bottom: 60px;
-	}
-	.footer {
-	  position: absolute;
-	  bottom: 0;
-	  width: 100%;
-	  /* Set the fixed height of the footer here */
-	  height: 60px;
-	  background-color: #f5f5f5;
-	}
-
-
-	/* Custom page CSS
-	-------------------------------------------------- */
-	/* Not required for template or sticky footer method. */
-
-	.container {
-	  width: auto;
-	  max-width: 80%;
-	  min-width: 500px;
-	  padding: 0 15px;
-	}
-	.container .text-muted {
-	  margin: 20px 0;
-	}
-	 .table>tbody>tr>td {
-		padding: 30px;
-	}
-	.nav.navbar-nav a {
-		cursor: pointer;
-	}
-	.table-bordered>thead>tr>th{
-	  border:none;
-	  text-align:center;
-	}
-	.table-bordered>thead>tr>td{
-		width:300px;
-	}
-	.label{
-	  margin-right:1em;
-	}
-
-	* {
-		-webkit-transition: all 1s ease;
-		  -moz-transition: all 1s ease;
-		  -ms-transition: all 1s ease;
-		  -o-transition: all 1s ease;
-		  transition: all 1s ease;
-	}
-	
-	.img-container {
-		height: 200px;
-		overflow: hidden;
-	}
-
-	.template-image{
-		width: 400px;
-	}
-	.template-description{
-		width: 400px;
-		max-width: 400px;
-		overflow:auto;
-	}
-	a{
-		cursor: pointer;
-	}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-top: 80px;
+  margin-bottom: 60px;
+  background-color: #eee;
+}
+.container {
+  width: auto;
+  max-width: 80%;
+  min-width: 500px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+ .table>tbody>tr>td {
+	padding: 30px;
+}
+.nav.navbar-nav a {
+	cursor: pointer;
+}
+.label{
+  margin-right: 1em;
+}
+* {
+	-webkit-transition: all 1s ease;
+	  -moz-transition: all 1s ease;
+	  -ms-transition: all 1s ease;
+	  -o-transition: all 1s ease;
+	  transition: all 1s ease;
+}
+.img-container {
+	height: 200px;
+	overflow: hidden;
+}
+.template-image{
+	width: 100%;
+	border: 1px #ececec;
+	padding: 0;
+}
+.template-description {
+	width: 400px;
+	max-width: 400px;
+	overflow:auto;
+}
+a {
+	cursor: pointer;
+}
+.thumbnail {
+	border-color: transparent;
+}
+#template-container {
+	margin-top: 50px;
+}
+.template {
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 0 5px 10px rgba(0,0,0,.53),0 3px 10px rgba(0,0,0,.16);
+	margin: 10px;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	padding: 10px;
+	height: 450px;
+}
+.template .lead {
+	font-size: 17px;
+}
+.btn {
+	border-radius: 2px;
+}
+.description {
+	margin-top: 10px;
+	font-size: 12px;
+	height: 50px;
+	overflow: auto;
+	width: 100%;
+	line-height: 18px;
+	background-color: lightgrey;
+	padding: 5px;
+}
+.template-number {
+	color: #777;
+	font-size: 11px;
+}
+.navbar {
+	box-shadow: 0 5px 10px rgba(0,0,0,.53),0 3px 10px rgba(0,0,0,.16);
+	background-color: #009587;
+	border-color: #009587;
+}
+.form-control {
+	border-radius: 5px
+}
+.navbar-form .form-control {
+	height: 37px;
+}
+.navbar-form {
+	margin: 0;
+	margin-top: 5px;
+}
+.navbar-form span {
+	margin-left: 10px;
+	color: white;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-button {
+  width: 8px;
+  height:5px;
+}
+::-webkit-scrollbar-track {
+  background:#eee;
+  border: thin solid lightgray;
+  box-shadow: 0px 0px 3px #dfdfdf inset;
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border: thin solid gray;
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background:#7d7d7d;
+}

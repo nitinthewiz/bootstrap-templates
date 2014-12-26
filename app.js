@@ -2,7 +2,7 @@
 
   app.controller('mainCtrl', function ($scope, $http) {
 
-    $scope.appName = 'Yo Bootstrap'
+    $scope.appName = 'Bootstrap Templates'
 
     $scope.bootstrap_version_filter = function(row){
 
